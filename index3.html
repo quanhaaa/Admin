@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Phạm Quang Hà | </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        /* Custom donut chart with conic-gradient */
+        .donut {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: conic-gradient( #2a82d9 0% 30%, #2bb399 30% 40%, #8a4ea0 40% 60%, #a9b6bc 60% 75%, #e04c3c 75% 105% );
+            position: relative;
+        }
+
+            .donut::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 60px;
+                height: 60px;
+                background: white;
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+            }
+        .container {
+            display: flex;
+            align-items: center; /* căn giữa theo chiều dọc */
+            gap: 10px; /* khoảng cách giữa logo và chữ */
+        }
+
+            .container img {
+                height: 40px; /* chỉnh kích thước logo cho phù hợp */
+                width: auto;
+            }
+
+            .container .text {
+                display: flex;
+                flex-direction: column;
+                justify-content: center; /* căn giữa chữ theo chiều dọc */
+                color: white;
+            }
+
+    </style>
+
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+</head>
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="index.html" class="site_title"> <span>Quản lý bán hàng</span></a>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <!-- menu profile quick info -->
+
+                        <div class="container" style="background:#2a3f54; padding: 10px;">
+                            <img src="images/TechTeam (1).png" alt=" Logo"/>
+                            <div class="text">
+                                <div  style="font-weight: 600; font-size: 1.2em;">PQ Hà</div>
+                            </div>
+                        </div>
+
+                        <!-- /menu profile quick info -->
+
+                        <br />
+
+                        <!-- sidebar menu -->
+                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                            <div class="menu_section">
+                                <h3>General</h3>
+                                <ul class="nav side-menu">
+                                    <li>
+                                        <a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="index3.html">Dashboard</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="javascript:void(0)">  <span class="label label-success pull-right"></span></a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <!-- /sidebar menu -->
+                        <!-- /menu footer buttons -->
+                        <div class="sidebar-footer hidden-small">
+                            <a data-toggle="tooltip" data-placement="top" title="Settings">
+                                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                            </a>
+                            <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                            </a>
+                            <a data-toggle="tooltip" data-placement="top" title="Lock">
+                                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                            </a>
+                            <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                        <!-- /menu footer buttons -->
+                    </div>
+            </div>
+
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <div class="nav toggle">
+                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <nav class="nav navbar-nav">
+                        <ul class=" navbar-right">
+                            <li class="nav-item dropdown open" style="padding-left: 15px;">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+
+                                   Phạm Quang Hà
+                                </a>
+                                <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="javascript:;"> Profile</a>
+                                    <a class="dropdown-item" href="javascript:;">
+                                        <span class="badge bg-red pull-right"></span>
+                                        <span>Settings</span>
+                                    </a>
+                                    <a class="dropdown-item" href="javascript:;">Help</a>
+                                    <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                                </div>
+                            </li>
+
+                            <li role="presentation" class="nav-item dropdown open">
+                                <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-envelope-o"></i>
+                                    <span class="badge bg-green">3</span>
+                                </a>
+                                <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
+                                    <li class="nav-item">
+                                        <a class="dropdown-item">
+                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                            <span>
+                                                <span>Phạm Quang Hà</span>
+                                                <span class="time">3 phút trước</span>
+                                            </span>
+                                            <span class="message">
+                                                Có đơn hàng mới từ khách hàng
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="dropdown-item">
+                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                            <span>
+                                                <span>Phạm Quang Hà</span>
+                                                <span class="time">3 phút trước</span>
+                                            </span>
+                                            <span class="message">
+                                                Khách hàng đã đặt hàng, đang chờ phê duyệt
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="dropdown-item">
+                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                            <span>
+                                                <span>Phạm Quang Hà</span>
+                                                <span class="time">3 phút trước</span>
+                                            </span>
+                                            <span class="message">
+                                                Tin nhắn từ khách hàng
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <div class="text-center">
+                                            <a class="dropdown-item">
+                                                <strong>Xem tất cả</strong>
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="row" style="display: inline-block;">
+                    <div class=" top_tiles" style="margin: 10px 0;">
+                        <div class="col-md-3 col-sm-3  tile">
+                            <span>Hôm nay</span>
+                            <h2>231,809</h2>
+                            <span class="sparkline_one" style="height: 160px;">
+                                <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                            </span>
+                        </div>
+                        <div class="col-md-3 col-sm-3  tile">
+                            <span>Tuần này</span>
+                            <h2>231,809</h2>
+                            <span class="sparkline_one" style="height: 160px;">
+                                <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                            </span>
+                        </div>
+                        <div class="col-md-3 col-sm-3  tile">
+                            <span>Tháng này</span>
+                            <h2>231,809</h2>
+                            <span class="sparkline_one" style="height: 160px;">
+                                <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 125px;"></canvas>
+                            </span>
+                        </div>
+                        <div class="col-md-3 col-sm-3  tile">
+                            <span>Năm nay</span>
+                            <h2>231,809</h2>
+                            <span class="sparkline_one" style="height: 160px;">
+                                <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <br />
+
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 ">
+                        <div class="dashboard_graph x_panel">
+                            <div class="x_title">
+                                <div class="col-md-6">
+                                    <h3>Doanh Thu <small>Theo thời gian</small></h3>
+                                </div>
+                                <div class="col-md-6">
+                                    <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+                                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                                        <span>December 30, 2014 - January 28, 2025</span> <b class="caret"></b>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="x_content">
+                                <div class="demo-container" style="height:250px">
+                                    <div id="chart_plot_03" class="demo-placeholder"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+
+
+                    <div class="col-md-4 col-sm-6 ">
+                        <div class="x_panel tile fixed_height_320">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-2">
+                                    <h2 class="text-gray-500 font-semibold text-lg">Tình trạng</h2>
+                                    <span class="text-gray-400 text-sm font-normal">đơn hàng</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-gray-400 text-sm">
+                                    <i class="fas fa-chevron-up cursor-pointer"></i>
+                                    <i class="fas fa-wrench cursor-pointer"></i>
+                                    <i class="fas fa-times cursor-pointer"></i>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="donut shrink-0" aria-label="Donut chart showing order status distribution"></div>
+                                <div class="ml-8 flex flex-col justify-center space-y-2">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="w-4 h-4 rounded-sm block" style="background-color:#2a82d9;"></span>
+                                        <span class="text-gray-500 text-sm font-medium w-24">Đã giao</span>
+                                        <span class="text-gray-400 text-sm font-normal ml-auto">40%</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <span class="w-4 h-4 rounded-sm block" style="background-color:#2bb399;"></span>
+                                        <span class="text-gray-500 text-sm font-medium w-24">Đã hủy</span>
+                                        <span class="text-gray-400 text-sm font-normal ml-auto">10%</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <span class="w-4 h-4 rounded-sm block" style="background-color:#8a4ea0;"></span>
+                                        <span class="text-gray-500 text-sm font-medium w-24">Chờ xác nhận</span>
+                                        <span class="text-gray-400 text-sm font-normal ml-auto">20%</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <span class="w-4 h-4 rounded-sm block" style="background-color:#a9b6bc;"></span>
+                                        <span class="text-gray-500 text-sm font-medium w-24">Đang giao</span>
+                                        <span class="text-gray-400 text-sm font-normal ml-auto">15%</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <span class="w-4 h-4 rounded-sm block" style="background-color:#e04c3c;"></span>
+                                        <span class="text-gray-500 text-sm font-medium w-24">Hoàn tất</span>
+                                        <span class="text-gray-400 text-sm font-normal ml-auto">20%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- bar chart -->
+
+                    <div class="col-md-6 col-sm-6">
+                        <div class="x_panel">
+                            <!-- Header -->
+                            <div class="flex items-center justify-between px-4 py-2 border-b border-gray-200 text-gray-600 text-sm select-none">
+                                <div class="flex space-x-4">
+                                    <button class="focus:outline-none">Kho</button>
+                                    <button class="focus:outline-none">Sản phẩm</button>
+                                </div>
+                                <div class="flex space-x-4 text-gray-400">
+                                    <button aria-label="Expand" class="focus:outline-none">
+                                        <i class="fas fa-chevron-up"></i>
+                                    </button>
+                                    <button aria-label="Settings" class="focus:outline-none">
+                                        <i class="fas fa-wrench"></i>
+                                    </button>
+                                    <button aria-label="Close" class="focus:outline-none">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="flex px-4 py-4">
+                                <!-- Chart -->
+                                <svg viewBox="0 0 400 200" class="w-3/4 h-48" aria-label="4 loại sản phẩm" role="img">
+                                    <!-- Y axis lines and labels -->
+                                    <line x1="40" y1="20" x2="390" y2="20" stroke="#d1d5db" stroke-width="1" />
+                                    <line x1="40" y1="60" x2="390" y2="60" stroke="#d1d5db" stroke-width="1" />
+                                    <line x1="40" y1="100" x2="390" y2="100" stroke="#d1d5db" stroke-width="1" />
+                                    <line x1="40" y1="140" x2="390" y2="140" stroke="#d1d5db" stroke-width="1" />
+                                    <line x1="40" y1="180" x2="390" y2="180" stroke="#d1d5db" stroke-width="1" />
+
+                                    <!-- Y axis labels -->
+                                    <text x="10" y="185" fill="#6b7280" font-size="12" font-family="Arial, sans-serif">0</text>
+                                    <text x="10" y="145" fill="#6b7280" font-size="12" font-family="Arial, sans-serif">2</text>
+                                    <text x="10" y="105" fill="#6b7280" font-size="12" font-family="Arial, sans-serif">4</text>
+                                    <text x="10" y="65" fill="#6b7280" font-size="12" font-family="Arial, sans-serif">6</text>
+                                    <text x="10" y="25" fill="#6b7280" font-size="12" font-family="Arial, sans-serif">8</text>
+
+                                    <!-- Bars for 2015 Q1 -->
+                                    <rect x="60" y="140" width="15" height="40" fill="#14b8a6" />
+                                    <rect x="80" y="120" width="15" height="60" fill="#1e293b" />
+                                    <rect x="100" y="60" width="15" height="120" fill="#9ca3af" />
+
+                                    <!-- Bars for 2015 Q2 -->
+                                    <rect x="150" y="120" width="15" height="60" fill="#14b8a6" />
+                                    <rect x="170" y="80" width="15" height="100" fill="#1e293b" />
+                                    <rect x="190" y="60" width="15" height="120" fill="#9ca3af" />
+
+                                    <!-- Bars for 2015 Q3 -->
+                                    <rect x="240" y="100" width="15" height="80" fill="#14b8a6" />
+                                    <rect x="260" y="120" width="15" height="60" fill="#1e293b" />
+                                    <rect x="280" y="60" width="15" height="120" fill="#9ca3af" />
+
+                                    <!-- Bars for 2015 Q4 -->
+                                    <rect x="330" y="140" width="15" height="40" fill="#14b8a6" />
+                                    <rect x="350" y="100" width="15" height="80" fill="#1e293b" />
+                                    <rect x="370" y="60" width="15" height="120" fill="#9ca3af" />
+
+                                    <!-- X axis labels with fixed spacing -->
+                                    <text x="75" y="195" fill="#6b7280" font-size="12" font-family="Arial, sans-serif" text-anchor="middle">Điện tử</text>
+                                    <text x="170" y="195" fill="#6b7280" font-size="12" font-family="Arial, sans-serif" text-anchor="middle">Điện thoại</text>
+                                    <text x="270" y="195" fill="#6b7280" font-size="12" font-family="Arial, sans-serif" text-anchor="middle">Thiết bị số</text>
+                                    <text x="360" y="195" fill="#6b7280" font-size="12" font-family="Arial, sans-serif" text-anchor="middle">Linh kiện</text>
+                                </svg>
+
+
+                                <!-- Legend -->
+                                <div class="w-1/4 pl-6 flex flex-col justify-center space-y-3 text-sm text-gray-600 select-none">
+                                    <div class="flex items-center space-x-2">
+                                        <div class="w-4 h-4 bg-[#9ca3af] rounded-sm flex-shrink-0"></div>
+                                        <span class="whitespace-nowrap">Tổng sản phẩm</span>
+                                    </div>
+
+
+                                    <div class="flex items-center space-x-2">
+                                        <div class="w-4 h-4 bg-[#1e293b] rounded-sm"></div>
+                                        <span>Sắp hết hàng</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <div class="w-4 h-4 bg-[#14b8a6] rounded-sm"></div>
+                                        <span>Hết hàng</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                   
+<!-- /bar charts group -->
+
+
+                </div>
+          </div>
+        </div>
+<!-- /page content -->
+<!-- footer content -->
+<footer>
+    <div class="pull-right">
+        <a href="https://colorlib.com"></a>
+    </div>
+    <div class="clearfix"></div>
+</footer>
+<!-- /footer content -->
+      </div>
+    </div>
+
+<!-- jQuery -->
+<script src="../vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<!-- FastClick -->
+<script src="../vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="../vendors/nprogress/nprogress.js"></script>
+<!-- Chart.js -->
+<script src="../vendors/Chart.js/dist/Chart.min.js"></script>
+<!-- jQuery Sparklines -->
+<script src="../vendors/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+<!-- morris.js -->
+<script src="../vendors/raphael/raphael.min.js"></script>
+<script src="../vendors/morris.js/morris.min.js"></script>
+<!-- gauge.js -->
+<script src="../vendors/gauge.js/dist/gauge.min.js"></script>
+<!-- bootstrap-progressbar -->
+<script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+<!-- Skycons -->
+<script src="../vendors/skycons/skycons.js"></script>
+<!-- Flot -->
+<script src="../vendors/Flot/jquery.flot.js"></script>
+<script src="../vendors/Flot/jquery.flot.pie.js"></script>
+<script src="../vendors/Flot/jquery.flot.time.js"></script>
+<script src="../vendors/Flot/jquery.flot.stack.js"></script>
+<script src="../vendors/Flot/jquery.flot.resize.js"></script>
+<!-- Flot plugins -->
+<script src="../vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+<script src="../vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+<script src="../vendors/flot.curvedlines/curvedLines.js"></script>
+<!-- DateJS -->
+<script src="../vendors/DateJS/build/date.js"></script>
+<!-- bootstrap-daterangepicker -->
+<script src="../vendors/moment/min/moment.min.js"></script>
+<script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+<!-- Custom Theme Scripts -->
+<script src="../build/js/custom.min.js"></script>
+
+  </body>
+</html>
